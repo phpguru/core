@@ -14,7 +14,7 @@ Objects are in-memory data structures that encapsulate a set of related informat
 
 Developing object-oriented code requires careful planning, but makes application code easier to maintain by reducing the amount of overall code you have to write, and encourages code reuse by providing a consistent way of accessing data and calling methods. The Kohana Team has collectively put in thousands of hours toward making the Kohana Framework an elegant collection of the most common features needed by web developers. One of Kohana's greatest strengths is that it is nearly 100% object-oriented code, that provides a rich set of basic features, but is also extremely easy to extend to suit your specific needs. 
 
-Model-View-Controller is a design pattern impemented by many object-oriented frameworks. In Kohana, your [Models](mvc/models) are classes representing rows from your database or business logic, and [Controllers](mvc/controllers) are classes handling web requests. You can also write your own classes and easily include them in your application or in a module. Read their respective pages to learn more.
+Model-View-Controller is a design pattern implemented by many object-oriented frameworks, some more strictly than others. In Kohana, your [Models](mvc/models) are classes representing rows from your database or business logic, and [Controllers](mvc/controllers) are classes handling web requests. You can also write your own classes and easily include them in your application or in a [Module](/modules). Read their respective pages to learn more.
 
 ## Helper or Library?
 
