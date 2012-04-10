@@ -1,6 +1,8 @@
 # Messages
 
-Kohana has a robust key based lookup system so you can define system messages.
+Kohana has a robust key-based lookup system so you can define system messages. Using messages in your application  
+keeps your views free of scalar strings and consolidates all of your on-screen text to a specific folder within your 
+application, which encourages re-use and makes your code easier to maintain.
 
 ## Getting a message
 
