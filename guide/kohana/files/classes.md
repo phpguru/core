@@ -68,4 +68,8 @@ For examples of how to create and use classes, simply look at the 'classes' fold
 
 ## Namespacing your classes
 
+Just as function names can collide in a procedural PHP application, class names can collide in an object-oriented application. The typical scenario is when two different developers create the same class name but the classes don't offer exactly the same api methods, if you'd like to use them both in your project, it can be a real pain to change one class name through a heirarchy of inheritance. Enter [PHP 5.3 Namespaces](http://php.net/manual/en/language.namespaces.php).
+
+Until the following TODO: is done, read [this forum thread on the topic of PSR-0 Support in Kohana 3.3](http://forum.kohanaframework.org/discussion/comment/71039).
+
 TODO: Discuss namespacing to provide transparent extension functionality in your own classes/modules.
