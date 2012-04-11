@@ -1,18 +1,18 @@
 # Classes
 
-Classes are the evolution of elegant programming. The easiest way to explain why classes are so important to modern development is to provide a little history of programming. 
+Object-oriented programming (OOP) is arguably the evolution of elegant software design. Effectively using and writing Classes is the gateway to OOP. The easiest way to explain why classes are so important to modern development is to review a little history of programming. 
 
 ### Procedural Programming
 
-Procedural code is what you learn the first day you sit down to learn programming. In the typical *Hello World* example, you have a file such as index.php, you sprinkle some echo statements in it, and run it. Top down execution. Anyone who has built or inherited a website created with only procedural code probably knows all too well that it can be a nightmare to maintain, because you can fix something in one place, but that doesn't fix it anywhere else. Copy and paste are the best friends of the procedural coder.
+*Procedural code* is what you learn the first day you sit down to learn to program. In the typical *Hello World* example, you have a file such as index.php, you sprinkle some echo statements in it, and run it. Top down execution. Anyone who has built or inherited a website created with only procedural code probably knows all too well that it can be a nightmare to maintain, because you can fix something in one place, but that doesn't fix it anywhere else. Copy and paste are the best friends of the procedural coder.
 
 ### Functions
 
-Functions are the most common solution to problems inherent with procedural code. With functions, anytime you need a particular feature, you can write a function and call the function instead. At least with functions, if you need to change something that appears in dozens or hundreds of places on your site, if it's calling a function, changing the way the function works changes the result everywhere that function is called. Functions help you to reuse logic and make your code more compact.
+*Functions* are the most common solution to problems inherent with procedural code. With functions, anytime you need a particular feature, you can write a function and call the function instead. At least with functions, if you need to change something that appears in dozens or hundreds of places on your site, if it's calling a function, changing the way the function works changes the result everywhere that function is called. Functions help you to reuse logic and make your code more compact.
 
 ### Issues with Functions
 
-One of the biggest problems with functions is that they don't play well with others. For example, if you write a function area($width, $height){ } to calculate the area of a rectangle, and someone else writes a function area($radius){ } for calculating the area of a circle, and you want to include their code to work with both rectangles and circles in your project, what do you do? The function names collide, your app throws errors, and you have a problem to deal with. Another issue with functions is that they have to be included either from a file, or worse, copied and pasted, every time they're called. For a single page website, this isn't a big deal, but the larger the app, the more likely you'll run into challenges trying to load and keep your include functions straight. Another limitation is that you cannot extend a function and add more features to it in a way that is easily packaged for re-use.
+One of the biggest problems with functions is that they don't play well with others. For example, if you write a <code>function area($width, $height){ }</code> to calculate the area of a rectangle, and someone else writes a <code>function area($radius){ }</code> for calculating the area of a circle, and you want to include their code to work with both rectangles and circles in your project, what do you do? The function names collide, your app throws errors, and you have a problem to deal with. Another issue with functions is that they have to be included either from a file, or worse, copied and pasted, every time they're called. For a single page website, this isn't a big deal, but the larger the app, the more likely you'll run into challenges trying to load and keep your include functions straight. Another limitation is that you cannot extend a function and add more features to it in a way that is easily packaged for re-use.
 
 ### Classes
 
