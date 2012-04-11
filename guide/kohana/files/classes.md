@@ -4,7 +4,7 @@ Classes are the evolution of elegant programming. The easiest way to explain why
 
 ### Procedural Programming
 
-Procedural code is what you learn the first day you sit down to learn to write code. In the typical Hello World example, you have a file such as index.php, you put some echo statements in it, and run it. Anyone who has built or inherited a website created with only procedural code probably knows all too well that it can be a nightmare to maintain, because you can fix something in one place, but that doesn't fix it anywhere else. Copy and paste are the best friends of the procedural coder.
+Procedural code is what you learn the first day you sit down to learn programming. In the typical *Hello World* example, you have a file such as index.php, you sprinkle some echo statements in it, and run it. Top down execution. Anyone who has built or inherited a website created with only procedural code probably knows all too well that it can be a nightmare to maintain, because you can fix something in one place, but that doesn't fix it anywhere else. Copy and paste are the best friends of the procedural coder.
 
 ### Functions
 
@@ -12,11 +12,13 @@ Functions are the most common solution to problems inherent with procedural code
 
 ### Issues with Functions
 
-One of the biggest problems with functions is that they don't play well with others. For example, if you write a function area($width, $height) to calculate the area of a rectangle, and someone else writes a function area($radius) for calculating the area of a circle, and you want to work with both rectangles and circles in your project, what do you do? The function names collide, your app throws errors, and you have a problem to deal with. Another issue with functions is that they have to be included from a file every time they're called. For small applications, this isn't a big deal, but the larger the app, the more likely you'll run into challenges trying to load function files properly. Another limitation is that you cannot extend a function and add more features to it in a way that is easily packaged for re-use.
+One of the biggest problems with functions is that they don't play well with others. For example, if you write a function area($width, $height){ } to calculate the area of a rectangle, and someone else writes a function area($radius){ } for calculating the area of a circle, and you want to include their code to work with both rectangles and circles in your project, what do you do? The function names collide, your app throws errors, and you have a problem to deal with. Another issue with functions is that they have to be included either from a file, or worse, copied and pasted, every time they're called. For a single page website, this isn't a big deal, but the larger the app, the more likely you'll run into challenges trying to load and keep your include functions straight. Another limitation is that you cannot extend a function and add more features to it in a way that is easily packaged for re-use.
 
 ### Classes
 
-With classes, nearly all of the issues with procedural code and using functions are completely solved. Classes are templates which define how objects should be created and what operations you can perform on them. With a class, you can define the allowed data to be used, and provide an API which other consumers of your class must follow. Classes, by design, provide a name space (not to be confused with Namespaces). Applying our example above, you could create a new Rectangle( ) and call $rectangle->area($w,$h) using your rectangle area calculation function, and create a new Circle( ) and call $circle->area($r) for calculating a circle's area. Even though both classes have an area( ) function (method) the insulation inside of a variable protects the function names. But there's much more to it than that.
+With classes, nearly all of the issues with procedural code and using functions are completely solved. Classes are templates which define how objects should be created and what operations you can perform on them. With a class, you can define the allowed data to be used, and provide an API which other consumers of your class must follow. Classes, by design, provide a name space (not to be confused with Namespaces). 
+
+Applying our example above, using classes, you could create a new Rectangle object and call $rectangle->area($w,$h) using your rectangle area calculation function, and create a new Circle object and call $circle->area($r) for calculating a circle's area. Even though both classes have an area( ) function (method) the insulation inside of a variable protects the function names. But there's much more to it than that.
 
 ### Objects
 
