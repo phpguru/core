@@ -2,33 +2,35 @@
 
 Object-oriented programming (OOP) is arguably the evolution of elegant software design. Effectively using and writing Classes is the gateway to OOP. The easiest way to explain why classes are so important to modern development is to review a little history of programming. 
 
-### Procedural Programming
+#### Procedural Programming
 
 *Procedural code* is what you learn the first day you sit down to learn to program. In the typical *Hello World* example, you have a file such as index.php, you sprinkle some echo statements in it, and run it. Top down execution. Anyone who has built or inherited a website created with only procedural code probably knows all too well that it can be a nightmare to maintain, because you can fix something in one place, but that doesn't fix it anywhere else. Copy and paste are the best friends of the procedural coder.
 
-### Functions
+#### Functions
 
 *Functions* are the most common solution to problems inherent with procedural code. With functions, anytime you need a particular feature, you can write a function and call the function instead. At least with functions, if you need to change something that appears in dozens or hundreds of places on your site, if it's calling a function, changing the way the function works changes the result everywhere that function is called. Functions help you to reuse logic and make your code more compact.
 
-### Issues with Functions
+#### Issues with Functions
 
 One of the biggest problems with functions is that they don't play well with others. For example, if you write a <code>function area($width, $height){ }</code> to calculate the area of a rectangle, and someone else writes a <code>function area($radius){ }</code> for calculating the area of a circle, and you want to include their code to work with both rectangles and circles in your project, what do you do? The *function names collide*, your app throws a <code>Fatal error: Cannot redeclare area() (previously declared in /path/to/functions.php:123)</code> error, and you have a problem to deal with. Another issue with functions is that they have to be included either from a file, or worse, copied and pasted, every time they're called. For a single page website, this isn't a big deal, but the larger the app, the more likely you'll run into challenges trying to keep your include functions organized. Another limitation is that you cannot extend a function and add more features to it in a way that is easily packaged for re-use.
 
-### Classes
+#### Classes
 
-With classes, nearly all of the issues with procedural code and using functions are completely solved. Classes are templates which define how objects should be created and what operations you can perform on them. With a class, you can define the allowed data to be used, and provide an API which other consumers of your class must follow. Classes, by design, provide a name space (not to be confused with Namespaces). 
+With *Classes*, nearly all of the issues with procedural code and using functions are completely solved. Classes are templates which define how objects should be created and what operations you can perform on them. With a class, you can define the allowed data to be used, and provide an API which other consumers of your class must follow. Classes, by design, provide a name space (not to be confused with Namespaces). 
 
-Applying our example above, using classes, you could create a new Rectangle object and call $rectangle->area($w,$h) using your rectangle area calculation function, and create a new Circle object and call $circle->area($r) for calculating a circle's area. Even though both classes have an area( ) function (method) the insulation inside of a variable protects the function names. But there's much more to it than that.
+Applying our example above, using classes, you could create a <code>new Rectangle;</code> object and call <code>$rectangle->area($w,$h);</code> using your rectangle area calculation function, and create a <code>new Circle;</code> object and call <code>$circle->area($r);</code> for calculating a circle's area. Even though both classes have an area( ) function (method) the insulation inside of a variable protects the function names. But there's much more to it than that.
 
-### Objects
+#### Objects
 
 Objects are in-memory data structures that encapsulate a set of related information (data, properties) and provide operations (methods) to work with that data. Objects can extend other objects, and thus inherit their functionality and build upon it. For instance, continuing with our example above, we can define a shape object in a shape class, and require that specific future implementations (classes extending our class), such as rectangle and circle, must provide an area method. 
 
-Developing object-oriented code requires careful planning, but makes application code easier to maintain by reducing the amount of overall code you have to write, and encourages code reuse by providing a consistent way of accessing data and calling methods. The Kohana Team has collectively put in thousands of hours toward making the Kohana Framework an elegant collection of the most common features needed by web developers, and encapsulated all of those features into classes. One of Kohana's greatest strengths is that it is nearly 100% object-oriented code, that provides a rich set of basic features, but is also extremely easy to extend to suit your specific needs. 
+Developing object-oriented code requires careful planning, but the payoff is that it makes application code easier to maintain by reducing the amount of overall code you have to write, and encourages code reuse by providing a consistent way of accessing data and calling methods. Ultimately, OOP saves time when you have to make changes later. 
 
-To learn more about the history of Object-Oriented Programming, start at [Wikipedia](http://en.wikipedia.org/wiki/Object-oriented_programming).
+The Kohana Team has collectively put in thousands of hours toward making the Kohana Framework an elegant, streamlined and efficient collection of classes encapsulating the most common features needed by web developers. One of Kohana's greatest strengths is that it is nearly 100% object-oriented code, it provides a rich set of features, and it's designed in a way that makes it extremely easy to extend it to suit your specific needs. 
 
-### Classes in Kohana
+To learn more about the history and theory of Object-Oriented Programming, start over at [Wikipedia](http://en.wikipedia.org/wiki/Object-oriented_programming).
+
+#### Classes in Kohana
 
 Model-View-Controller is a design pattern implemented by many object-oriented frameworks, some more strictly than others. In Kohana, your [Models](mvc/models) are classes representing rows from your database or business logic, and [Controllers](mvc/controllers) are classes handling web requests. You can also write your own classes and easily include them in your application or in a [Module](modules). Read their respective pages to learn more.
 
