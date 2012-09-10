@@ -22,12 +22,14 @@ class Kohana_ViewTest extends Unittest_TestCase
 	 *
 	 * @return null
 	 */
+	// @codingStandardsIgnoreStart
 	public static function setupBeforeClass()
+	// @codingStandardsIgnoreEnd
 	{
 		self::$old_modules = Kohana::modules();
 
 		$new_modules = self::$old_modules+array(
-			'test_views' => realpath(__DIR__.'/../test_data/')
+			'test_views' => realpath(dirname(__FILE__).'/../test_data/')
 		);
 		Kohana::modules($new_modules);
 	}
@@ -37,7 +39,9 @@ class Kohana_ViewTest extends Unittest_TestCase
 	 *
 	 * @return null
 	 */
+	// @codingStandardsIgnoreStart
 	public static function teardownAfterClass()
+	// @codingStandardsIgnoreEnd
 	{
 		Kohana::modules(self::$old_modules);
 	}

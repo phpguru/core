@@ -1,4 +1,4 @@
-<?php defined('SYSPATH') or die('No direct script access.');
+<?php defined('SYSPATH') OR die('No direct script access.');
 /**
  * Log writer abstract class. All [Log] writers must extend this class.
  *
@@ -42,7 +42,7 @@ abstract class Kohana_Log_Writer {
 	/**
 	 * @var  int  Level to use for stack traces
 	 */
-	public static $strace_level = LOG_ALERT;
+	public static $strace_level = LOG_DEBUG;
 
 	/**
 	 * Write an array of messages.

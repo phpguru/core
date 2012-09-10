@@ -1,4 +1,4 @@
-<?php defined('SYSPATH') or die('No direct script access.');
+<?php defined('SYSPATH') OR die('No direct script access.');
 /**
  * Contains the most low-level helpers methods in Kohana:
  *
@@ -172,6 +172,7 @@ class Kohana_Core {
 	 * `boolean` | errors     | Should Kohana catch PHP errors and uncaught Exceptions and show the `error_view`. See [Error Handling](kohana/errors) for more info. <br /> <br /> Recommended setting: `TRUE` while developing, `FALSE` on production servers. | `TRUE`
 	 * `boolean` | profile    | Whether to enable the [Profiler](kohana/profiling). <br /> <br />Recommended setting: `TRUE` while developing, `FALSE` on production servers. | `TRUE`
 	 * `boolean` | caching    | Cache file locations to speed up [Kohana::find_file].  This has nothing to do with [Kohana::cache], [Fragments](kohana/fragments) or the [Cache module](cache).  <br /> <br />  Recommended setting: `FALSE` while developing, `TRUE` on production servers. | `FALSE`
+	 * `boolean` | expose     | Set the X-Powered-By header
 	 *
 	 * @throws  Kohana_Exception
 	 * @param   array   $settings   Array of settings.  See above.
@@ -499,7 +500,7 @@ class Kohana_Core {
 		{
 			$namespace = substr($class, 0, $last_namespace_position);
 			$class     = substr($class, $last_namespace_position + 1);
-			$file      = str_replace('\\', DIRECTORY_SEPARATOR, $namespace) . DIRECTORY_SEPARATOR;
+			$file      = str_replace('\\', DIRECTORY_SEPARATOR, $namespace).DIRECTORY_SEPARATOR;
 		}
 
 		$file .= str_replace('_', DIRECTORY_SEPARATOR, $class);
@@ -1024,7 +1025,7 @@ class Kohana_Core {
 		if (Kohana::$errors AND $error = error_get_last() AND in_array($error['type'], Kohana::$shutdown_errors))
 		{
 			// Clean the output buffer
-			ob_get_level() and ob_clean();
+			ob_get_level() AND ob_clean();
 
 			// Fake an exception for nice debugging
 			Kohana_Exception::handler(new ErrorException($error['message'], $error['type'], 0, $error['file'], $error['line']));

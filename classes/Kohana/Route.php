@@ -1,4 +1,4 @@
-<?php defined('SYSPATH') or die('No direct script access.');
+<?php defined('SYSPATH') OR die('No direct script access.');
 /**
  * Routes are used to determine the controller and action for a requested URI.
  * Every route generates a regular expression which is used to match a URI
@@ -156,8 +156,18 @@ class Kohana_Route {
 	{
 		if ($save === TRUE)
 		{
-			// Cache all defined routes
-			Kohana::cache('Route::cache()', Route::$_routes);
+			try
+			{
+				// Cache all defined routes
+				Kohana::cache('Route::cache()', Route::$_routes);
+			}
+			catch (Exception $e)
+			{
+				// We most likely have a lambda in a route, which cannot be cached
+				throw new Kohana_Exception('One or more routes could not be cached (:message)', array(
+						':message' => $e->getMessage(),
+					), 0, $e);
+			}
 		}
 		else
 		{

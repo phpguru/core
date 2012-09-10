@@ -1,4 +1,4 @@
-<?php defined('SYSPATH') or die('No direct script access.');
+<?php defined('SYSPATH') OR die('No direct script access.');
 /**
  * HTML helper class. Provides generic methods for generating various HTML
  * tags and making output HTML safe.
@@ -163,7 +163,7 @@ class Kohana_HTML {
 		}
 
 		// Add the file link to the attributes
-		$attributes['href'] = URL::base($protocol, $index).$file;
+		$attributes['href'] = URL::site($file, $protocol, $index);
 
 		return '<a'.HTML::attributes($attributes).'>'.$title.'</a>';
 	}
@@ -209,7 +209,7 @@ class Kohana_HTML {
 		if (strpos($file, '://') === FALSE)
 		{
 			// Add the base URL
-			$file = URL::base($protocol, $index).$file;
+			$file = URL::site($file, $protocol, $index);
 		}
 
 		// Set the stylesheet link
@@ -242,7 +242,7 @@ class Kohana_HTML {
 		if (strpos($file, '://') === FALSE)
 		{
 			// Add the base URL
-			$file = URL::base($protocol, $index).$file;
+			$file = URL::site($file, $protocol, $index);
 		}
 
 		// Set the script link
@@ -272,7 +272,7 @@ class Kohana_HTML {
 		if (strpos($file, '://') === FALSE)
 		{
 			// Add the base URL
-			$file = URL::base($protocol, $index).$file;
+			$file = URL::site($file, $protocol, $index);
 		}
 
 		// Add the image link
