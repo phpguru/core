@@ -351,7 +351,7 @@ class Kohana_RouteTest extends Unittest_TestCase
 				'(<controller>(/<action>(/<id>)))',
 				NULL,
 				array('controller' => 'welcome', 'action' => 'index'),
-				'welcome',
+				'Welcome',
 				'index',
 				'unit/test/1',
 				array(
@@ -360,6 +360,34 @@ class Kohana_RouteTest extends Unittest_TestCase
 					'id' => '1'
 				),
 				'',
+			),
+			/**
+			 * Specifying this should cause controller and action to show up
+			 * refs #4113
+			 */
+			array(
+				'(<controller>(/<action>(/<id>)))',
+				NULL,
+				array('controller' => 'welcome', 'action' => 'index'),
+				'Welcome',
+				'index',
+				'welcome/index/1',
+				array(
+					'id' => '1'
+				),
+				'',
+			),
+			array(
+				'<controller>(/<action>(/<id>))',
+				NULL,
+				array('controller' => 'welcome', 'action' => 'index'),
+				'Welcome',
+				'index',
+				'welcome/foo',
+				array(
+					'action' => 'foo',
+				),
+				'welcome',
 			),
 		);
 	}
@@ -397,6 +425,27 @@ class Kohana_RouteTest extends Unittest_TestCase
 		$this->assertSame($a, $matches['action']);
 		$this->assertSame($test_uri, $route->uri($test_uri_array));
 		$this->assertSame($default_uri, $route->uri());
+	}
+
+	/**
+	 * Optional params should not be used if what is passed in is identical
+	 * to the default.
+	 *
+	 * refs #4116
+	 *
+	 * @test
+	 * @covers Route::uri
+	 */
+	public function test_defaults_are_not_used_if_param_is_identical()
+	{
+		$route = new Route('(<controller>(/<action>(/<id>)))');
+		$route->defaults(array(
+			'controller' => 'welcome',
+			'action'     => 'index'
+		));
+
+		$this->assertSame('', $route->uri(array('controller' => 'welcome')));
+		$this->assertSame('welcome2', $route->uri(array('controller' => 'welcome2')));
 	}
 
 	/**
